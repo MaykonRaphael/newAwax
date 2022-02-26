@@ -663,3 +663,84 @@ header {
     border-radius: 30px;
     cursor: pointer;
 }
+
+
+
+
+
+
+/*MAP*/
+.map {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/mapa.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+}
+.section-infos {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #000;
+    padding: 40px 100px 40px 30px;
+    background-color: #FFF;
+    border-radius: 5px;
+}
+.section-map-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+
+
+
+/*FOOTER*/
+footer {
+    background-color: #000;
+    padding: 30px 40px;
+}
+.footer-area {
+    max-width: 1140px;
+    margin: auto;
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.footer-social {
+    display: flex;
+    gap: 8px;
+}
+.footer-social svg:hover {
+    color: #B28756;
+}
+.footer-text {
+    color: #AAA;
+}
+.footer-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #444;
+    padding: 30px 50px;
+    border-radius: 5px;
+}
+.footer-form input[type=email] {
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #FFF;
+    padding-left: 10px;
+    border-bottom: 1px solid #CCC;
+    text-align: center;
+}
+.footer-form .button {
+    margin: auto;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+}
