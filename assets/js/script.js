@@ -115,4 +115,24 @@ const updatePremium = () => {
 }
 
 
+
+
+document.querySelector('.menu-mobile').addEventListener('click', ()=> {
+    openMenu = document.querySelector('.menu nav');
+
+    openMenu.style.display == 'none'
+    ? openMenu.style.display = 'block'
+    : openMenu.style.display = 'none';
+});
+
+
+
+const backToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
 // setInterval(goNextTeam, 3000);

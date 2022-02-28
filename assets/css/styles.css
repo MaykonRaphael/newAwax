@@ -6,6 +6,9 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 13px;
@@ -54,8 +57,19 @@ a {
     transition: .2s;
     text-transform: uppercase;
 }
-.button:hover {
+.button:hover,
+.button2:hover {
     background-color: #9B754B;
+}
+.button2 {
+    background-color: #B28756;
+    position: absolute;
+    z-index: 99;
+    padding: 5px;
+    margin-top: -50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px #333;
 }
 .slide-pointer {
     display: flex;
@@ -102,22 +116,27 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    height: 100px;
     padding: 0 10px;
 }
 .header img {
     height: 80px;
 }
+.menu-mobile {
+    display: none;
+}
 .menu {
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     height: inherit;
 }
 .menu nav {
     display: flex;
     align-items: center;
     gap: 3px;
+    height: inherit;
 }
 .menu a {
     display: flex;
@@ -136,7 +155,6 @@ header {
 }
 .menu .active {
     color: #FFF;
-    font-weight: 500;
 }
 
 
@@ -203,11 +221,11 @@ header {
     margin-bottom: 30px;
 }
 .about .section-right {
-    width: 520px;
+    max-width: 520px;
     text-align: center;
 }
 .about .section-right img {
-    width: 480px;
+    max-width: 480px;
     box-shadow: 0 5px 5px #333;
 }
 .about .section-left .button {
@@ -514,6 +532,7 @@ header {
 }
 .section-premium-description {
     margin-top: 10px;
+    margin-right: 10px;
 }
 .section-premium-description h4 {
     font-size: 17px;
@@ -522,6 +541,7 @@ header {
     color: #555;
     font-size: 12px;
     line-height: 20px;
+    text-transform: none;
 }
 .section-premium-description ul {
     list-style: none;
@@ -550,7 +570,7 @@ header {
     display: flex;
 }
 .facts .section-fact-item {
-    /* flex: 1; */
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -592,10 +612,10 @@ header {
     justify-content: center;
     align-items: center;
     color: #555;
-    gap: 30px;
+    gap: 20px;
 }
 .section-social-left {
-    flex: 1;
+    /* flex: 1; */
     display: flex;
     gap: 8px;
     align-items: center;
@@ -606,7 +626,7 @@ header {
     text-transform: uppercase;
 }
 .section-social-right {
-    flex: 1;
+    /* flex: 1; */
     display: flex;
     gap: 10px;
 }
@@ -725,7 +745,7 @@ footer {
     flex-direction: column;
     gap: 10px;
     background-color: #444;
-    padding: 30px 50px;
+    padding: 30px;
     border-radius: 5px;
 }
 .footer-form input[type=email] {
@@ -743,4 +763,358 @@ footer {
     border: none;
     color: #FFF;
     cursor: pointer;
+}
+
+
+
+
+
+
+
+/*RESPONSIVE*/
+@media (min-width: 450px) and (max-width: 811px) {
+    .header {
+        padding: 0 30px;
+    }
+    .menu-mobile {
+        display: block;
+    }
+    .menu nav {
+        display: none;
+        position: absolute;
+        z-index: 99;
+        width: 70vw;
+        height: calc(100vh - 100px);
+        top: 100px;
+        right: 0;
+        flex-direction: column;
+        background-color: rgb(0, 0, 0, 0.9);
+    }
+    .menu a {
+        width: 100%;
+        font-weight: 700;
+        font-size: 27px;
+        border: none;
+        padding: 0 25px;
+        height: 80px;
+    }
+    .menu a:hover,
+    .menu .active {
+        color: #B28756;
+        border: none;
+    }
+
+
+
+
+    /*ABOUT US*/
+    .section-aboutUs {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 0 30px;
+    }
+    .section-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+
+
+    /*SERVICES*/
+    .services .section-services {
+        flex-wrap: wrap;
+    }
+    .services .section-service {
+        min-width: 50%;
+        margin-bottom: 20px;
+        border: none;
+    }
+    .services .section-service:first-child {
+        border: none;
+    }
+    .services .section-service:nth-child(odd) {
+        border-right: 1px solid #333;
+    }
+
+
+
+
+
+    /*OUR PROJECTS*/
+    .ourProjects .section-projects-photos {
+        grid-template-columns: repeat(2, 260px);
+    }
+
+
+
+
+    /*TEAM*/
+    .team .slide-team-item:nth-child(even) {
+        margin-right: 0;
+    }
+    .team .slide-team-item:last-child {
+        display: none;
+    }
+
+
+
+
+
+    /*PRICES*/
+    .price .section-prices {
+        flex-wrap: wrap;
+        margin: 0 20px;
+    }
+    .price .section-price-item {
+        min-width: calc(50% - 40px);
+    }
+
+
+
+
+    
+    /*Some Facts*/
+    .facts .section-facts {
+        flex-wrap: wrap;
+    }
+    .facts .section-fact-item {
+        min-width: 50%;
+        margin-bottom: 20px;
+    }
+
+
+
+
+    /*MAP*/
+    .map .section-infos {
+        display: flex;
+        margin: 0 20px;
+    }
+
+    .button2 {
+        margin-top: -40px;
+        right: 35px;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .menu-mobile {
+        display: block;
+    }
+    .menu nav {
+        /* display: none; */
+        position: absolute;
+        z-index: 99;
+        width: 70vw;
+        height: calc(100vh - 100px);
+        top: 100px;
+        right: 0;
+        flex-direction: column;
+        background-color: rgb(0, 0, 0, 0.9);
+    }
+    .menu a {
+        width: 100%;
+        font-weight: 700;
+        font-size: 25px;
+        border: none;
+        padding: 0 25px;
+        height: 70px;
+    }
+    .menu a:hover,
+    .menu .active {
+        color: #B28756;
+        border: none;
+    }
+
+
+
+
+    /*BANNER*/
+    .banner .slide-item h1 {
+        font-size: 40px;
+    }
+
+
+
+
+    /*ABOUT US*/
+    .section-aboutUs {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 30px;
+    }
+    .section-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .section-right {
+        background-color: #F00;
+        width: auto;
+    }
+    .section-right img {
+        width: 100%;
+    }
+
+
+
+
+    /*SERVICES*/
+    .services .section-services {
+        flex-wrap: wrap;
+    }
+    .services .section-service {
+        min-width: 100%;
+        margin-bottom: 20px;
+        border: none;
+    }
+    .services .section-service:first-child {
+        border: none;
+    }
+
+
+
+
+    /*OUR PROJECTS*/
+    .ourProjects .section-filters-area {
+        width: auto;
+    }
+    .ourProjects .section-filters {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .ourProjects .section-projects-photos {
+        grid-template-columns: repeat(1, 260px);
+    }
+    .ourProjects .filters-item {
+        border: none;
+        padding: 10px 5px;
+        font-weight: 700;
+        color: #555;
+    }
+    .ourProjects .filters-item:hover,
+    .ourProjects .filters-item.active {
+        border: none;
+        color: #B28756;
+    }
+
+
+
+
+
+
+    /*TEAM*/
+    .team .slide-team-item:nth-child(even) {
+        margin-right: 0;
+    }
+    .team .slide-team-item:nth-child(odd) {
+        display: none;
+    }
+
+
+
+
+    /*COMPANIES*/
+    .section-companies {
+        flex-wrap: wrap;
+    }
+    .section-company {
+        min-width: 50%;
+        margin-bottom: 20px;
+    }
+
+
+
+
+
+    /*PRICES*/
+    .price .section-prices {
+        flex-wrap: wrap;
+        margin: 0 20px;
+    }
+    .price .section-price-item {
+        min-width: calc(100% - 40px);
+    }
+
+
+
+
+
+    /*PREMIUM*/
+    .section-premium-item {
+        flex-direction: column;
+    }
+    .section-premium-left {
+        text-align: center;
+    }
+    .section-premium-right {
+        padding: 10px 20px;
+    }
+
+
+
+
+    
+    /*SOME FACTS*/
+    .facts .section-facts {
+        flex-wrap: wrap;
+    }
+    .facts .section-fact-item {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+
+
+    
+    /*SOCIAL*/
+    .section-social {
+        flex-direction: column;
+    }
+
+
+
+
+    
+    /*CONTACT US*/
+    .section-contact {
+        padding: 0 20px;
+    }
+    .section-contact-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+
+
+    /*MAP*/
+    .map .section-infos {
+        display: flex;
+        margin: 0 20px;
+    }
+
+
+
+
+
+    /*FOOTER*/
+    .footer-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footer-social {
+        justify-content: center;
+    }
+    .footer-form {
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .button2 {
+        margin-top: -35px;
+        right: 35px;
+    }
 }
