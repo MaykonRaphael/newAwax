@@ -44,7 +44,7 @@ Then open the index.html file in your browser!
 ## 🔖 Layout
 ### Desktop
 <h1 align="center">
-    <img alt="New Awax" title="New Awax" src=".github/desktop.png" />
+    <img alt="New Awax" title="New Awax" src=".github/Desktop.png" />
 </h1>
 
 ### Mobile
